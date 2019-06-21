@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.*;
 /**
  * @Mapper :指定这个是操作数据库的mapper
  */
+// [注]:最好都加一下这个注解
 @Mapper
 public interface DepartmentMapper {
 
@@ -21,6 +22,7 @@ public interface DepartmentMapper {
     @Delete("delete from department where id=#{id}")
     public int deleteDeptById(Integer id);
 
+    // [注]:使用注解式myBatis时设定参数
     @Options(useGeneratedKeys = true,keyProperty = "id")
     @Insert("insert into department(departmentName) values(#{departmentName})")
     public int insertDept(Department department);

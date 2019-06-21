@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
+    <!-- 注:似乎有种说法,除了这里要true,在myBatis配置文件里也要配一遍 -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 

@@ -9,6 +9,8 @@
 
     <!--public void inserEmp(Employee employee);-->
     <insert id="inserEmp" parameterType="com.huanghe.springboot.bean.Employee">
+    <!-- 注:这里的selectKey就是返回新增记录的主键,不过在EmployeeMapper里面应该用int获取,本项目没有获取这个主键值 -->
+    <!-- 注:参数是实体类,下面的#{}直接写属性名就行了 -->
         <selectKey keyProperty="id" resultType="int" order="AFTER">
             SELECT Last_insert_id()
         </selectKey>

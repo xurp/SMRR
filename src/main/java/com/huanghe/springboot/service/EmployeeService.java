@@ -56,6 +56,7 @@ public class EmployeeService {
      * @param id
      * @return
      */
+    // [注]:用springboot的cache缓存
     @Cacheable(value = "emp")
     public Employee getEmp(Integer id) {
         Employee employee = employeeMapper.getEmpById(id);
@@ -70,6 +71,7 @@ public class EmployeeService {
      * 1：目标方法
      * 2：将结果放到缓存中
      */
+    // [注]:这里的put和上面的able的value是一个,即这里更新完之后更新缓存
     @CachePut(value = "emp", key = "#employee.id")
     public Employee updateEmp(Employee employee) {
         System.out.println("update emp" + employee);

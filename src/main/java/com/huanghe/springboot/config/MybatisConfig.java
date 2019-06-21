@@ -18,6 +18,7 @@ public class MybatisConfig {
 
             @Override
             public void customize(Configuration configuration) {
+            	// [注]:自动使用驼峰命名属性映射字段
                 configuration.setMapUnderscoreToCamelCase(true);
             }
         };
